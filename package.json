@@ -1,0 +1,53 @@
+{
+  "name": "create-react-electon",
+  "version": "1.0.0",
+  "description": "This is a very minimalistic boilerplate for starting a new electron application with create-react-app",
+  "main": "public/main.js",
+  "homepage": "https://github.com/VtoCorleone/create-react-electon#readme",
+  "scripts": {
+    "start": "concurrently \"BROWSER=none npm run react-restart\" \"wait-on http://localhost:3000 && electron .\"",
+    "react-restart": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-start": "electron .",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "build — em.main=build/electron.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VtoCorleone/create-react-electon.git"
+  },
+  "keywords": [
+    "create-react-app",
+    "react",
+    "electron"
+  ],
+  "author": "Shane Chapman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VtoCorleone/create-react-electon/issues"
+  },
+  "dependencies": {
+    "react": "16.4.2",
+    "react-dom": "16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "3.6.1",
+    "electron": "2.0.7",
+    "electron-builder": "20.28.1",
+    "electron-is-dev": "0.3.0",
+    "wait-on": "2.1.0"
+  },
+  "build": {
+    "appId": "com.mook",
+    "files": [
+      "build/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  }
+}
